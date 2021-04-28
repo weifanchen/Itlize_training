@@ -54,14 +54,15 @@ var library = [
     { title: 'Walter Isaacson', author: 'Steve Jobs', libraryID: 4264 },
     { title: 'Mockingjay: The Final Book of The Hunger Games', author: 'SuzanneCollins', libraryID: 3245 }];
 
-// library = preferredOrder(library, [
-//         "author",
-//         "libraryID",
-//         "title"
-//     ]);
-
-function sortObject(object){
-    return object.sort((a, b) => (a.libraryID < b.libraryID) ? 1 : -1);
+function reorderObject(object){
+    return {
+        author: object.title,
+        libraryID: object.libraryID,
+        title: object.author,
+    }
 }
-console.log(library);
+function sortObject(objects){
+    var new_objects = objects.map(reorderObject);
+    return new_objects.sort((a, b) => (a.libraryID < b.libraryID) ? 1 : -1);
+}
 console.log(sortObject(library));
