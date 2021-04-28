@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <h1 id="userInfo"></h1>
+    <script>
+        alert("Welcome!");
+        var person = prompt("Please enter your name", "Tom");
+
+        var likeSoccer = confirm("Do you like soccer?");
+        if (likeSoccer){
+            txt = " like soccer!";
+        }
+        else{
+            txt = "doesn't like soccer!";
+        }
+        
+        document.getElementById("userInfo").innerHTML = "" + person + txt;
+        console.log(person + txt);
+    </script>
+    
+</body>
+</html>
